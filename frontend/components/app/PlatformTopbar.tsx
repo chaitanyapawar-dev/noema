@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import { useBackend } from "@/components/app/BackendProvider";
 
 const BREADCRUMBS: Record<string, string[]> = {
-  "/dashboard": ["Workspace", "Dashboard"],
-  "/library": ["Workspace", "Reel Library"],
-  "/search": ["Workspace", "AI Search"],
-  "/processing": ["Workspace", "Processing"],
-  "/settings": ["System", "Settings"],
+  "/dashboard": ["Noema", "Dashboard"],
+  "/library": ["Noema", "Knowledge Base"],
+  "/search": ["Noema", "AI Search"],
+  "/processing": ["Noema", "Ingestion Pipeline"],
+  "/settings": ["Noema", "Settings"],
   "/copilot": ["Intelligence", "AI Copilot"],
   "/memory": ["Intelligence", "Memory Graph"],
 };
@@ -51,7 +51,7 @@ export default function PlatformTopbar({ onTogglePanel }: { onTogglePanel?: () =
         }}
       >
         <Search className="h-3.5 w-3.5 text-white/30" />
-        <span className="text-xs text-white/30 hidden sm:block">Search reels...</span>
+        <span className="text-xs text-white/30 hidden sm:block">Search knowledge...</span>
         <div className="flex items-center gap-0.5 rounded border border-white/10 px-1.5 py-0.5 text-[10px] text-white/25 hidden sm:flex">
           <Command className="h-2.5 w-2.5" />K
         </div>

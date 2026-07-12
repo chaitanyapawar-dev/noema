@@ -47,7 +47,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
             </span>
-            Multimodal Reel Memory Engine
+            Multimodal AI Knowledge Engine
           </motion.p>
 
           <motion.h1
@@ -57,7 +57,7 @@ export default function Hero() {
           >
             A Multimodal Brain
             <br />
-            <span className="text-gradient-hero">For Instagram Reels</span>
+            <span className="text-gradient-hero">For Everything You Learn</span>
           </motion.h1>
 
           <motion.p

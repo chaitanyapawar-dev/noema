@@ -10,11 +10,11 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Library", href: "/library", icon: Library },
+  { label: "Knowledge Base", href: "/library", icon: Library },
   { label: "AI Search", href: "/search", icon: Search },
   { label: "Copilot", href: "/copilot", icon: Bot, soon: true },
   { label: "Memory Graph", href: "/memory", icon: Network, soon: true },
-  { label: "Processing", href: "/processing", icon: Cpu },
+  { label: "Ingestion Pipeline", href: "/processing", icon: Cpu },
   { label: "Analytics", href: "/analytics", icon: BarChart3, soon: true },
   { label: "Settings", href: "/settings", icon: Settings },
 ];

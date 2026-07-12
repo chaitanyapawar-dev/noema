@@ -7,6 +7,7 @@ import { GitHubIcon } from "@/components/ui/BrandIcons";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
+import { BRAND } from "@/lib/branding";
 import FluidGlassLazy from "./FluidGlassLazy";
 import { useMotionSafe } from "@/lib/motion";
 
@@ -66,9 +67,14 @@ export default function Navbar() {
           >
             <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_8px_white]" />
           </motion.span>
-          <span className="font-display text-sm font-semibold tracking-[0.12em] text-white md:text-[15px]">
-            REEL SAVER AI
-          </span>
+          <div className="flex flex-col">
+            <span className="font-display text-sm font-bold tracking-[0.18em] text-white uppercase md:text-[15px]">
+              {BRAND.name}
+            </span>
+            <span className="text-[9px] tracking-[0.08em] text-white/40 font-medium hidden md:block">
+              {BRAND.tagline}
+            </span>
+          </div>
         </Link>
 
         <LayoutGroup>

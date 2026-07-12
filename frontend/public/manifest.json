@@ -1,0 +1,16 @@
+{
+  "name": "Noema",
+  "short_name": "Noema",
+  "description": "Transform everything you learn into connected knowledge.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030714",
+  "theme_color": "#5B8CFF",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

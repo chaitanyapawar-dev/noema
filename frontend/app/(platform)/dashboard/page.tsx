@@ -162,7 +162,7 @@ export default function DashboardPage() {
         >
           <div className="absolute top-0 left-[5%] right-[5%] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
           <Search className="h-4 w-4 text-white/30 shrink-0" />
-          <span className="text-sm text-white/30 flex-1">Search across all indexed reels...</span>
+          <span className="text-sm text-white/30 flex-1">Search across your knowledge base...</span>
           <div className="flex items-center gap-0.5 rounded-md border border-white/10 px-1.5 py-0.5 text-[10px] text-white/25">
             <Command className="h-2.5 w-2.5" />K
           </div>
@@ -173,7 +173,7 @@ export default function DashboardPage() {
       <div>
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xs font-semibold text-white/50 uppercase tracking-widest flex items-center gap-2">
-            Recent Reels
+            Recent Imports
             {loadingReels && <RefreshCw className="h-3 w-3 animate-spin text-white/30" />}
           </h2>
           <Link href="/library" className="flex items-center gap-1 text-xs text-white/35 hover:text-[#5B8CFF] transition-colors">
@@ -201,7 +201,7 @@ export default function DashboardPage() {
               Ingest your first Instagram Reel to extract transcripts, run optical character recognition, and create vector embeddings.
             </p>
             <Link href="/processing" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5B8CFF] to-[#7B61FF] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#5B8CFF]/20 hover:shadow-[#5B8CFF]/30 transition-all duration-300 hover:scale-[1.02]">
-              <Plus className="h-4 w-4" /> Ingest New Reel
+              <Plus className="h-4 w-4" /> Import First Content
             </Link>
           </div>
         ) : (

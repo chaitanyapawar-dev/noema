@@ -122,7 +122,7 @@ export default function SearchPage() {
         </div>
         <h1 className="text-3xl md:text-[40px] font-bold tracking-[-0.03em] leading-tight"
           style={{ background: "linear-gradient(to bottom, rgba(255,255,255,1), rgba(180,190,255,0.75))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          Search Your Reel Memory
+          Search Your Knowledge
         </h1>
         <p className="mt-4 text-white/45 text-sm max-w-[420px] mx-auto leading-relaxed">
           Natural language queries across audio transcripts, video text overlays, and visual contexts.

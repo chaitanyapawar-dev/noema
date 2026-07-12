@@ -9,9 +9,9 @@ import {
 
 const COMMANDS = [
   { label: "Go to Dashboard", icon: LayoutDashboard, href: "/dashboard" },
-  { label: "Reel Library", icon: Library, href: "/library" },
+  { label: "Knowledge Base", icon: Library, href: "/library" },
   { label: "AI Search", icon: Search, href: "/search" },
-  { label: "Processing Pipeline", icon: Cpu, href: "/processing" },
+  { label: "Ingestion Pipeline", icon: Cpu, href: "/processing" },
   { label: "Settings & System", icon: Settings, href: "/settings" },
   { label: "AI Copilot", icon: Bot, href: "/copilot" },
   { label: "Memory Graph", icon: Network, href: "/memory" },

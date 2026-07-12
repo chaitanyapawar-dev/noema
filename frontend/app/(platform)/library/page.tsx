@@ -105,9 +105,9 @@ export default function LibraryPage() {
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
         className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-white tracking-tight">Reel Library</h1>
+          <h1 className="text-xl font-bold text-white tracking-tight">Knowledge Base</h1>
           <p className="mt-0.5 text-sm text-white/40">
-            {reels.length} reels indexed in local storage
+            {reels.length} items indexed in local storage
           </p>
         </div>
         <button 
@@ -177,7 +177,7 @@ export default function LibraryPage() {
           </p>
           {reels.length === 0 && (
             <Link href="/processing" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5B8CFF] to-[#7B61FF] px-4 py-2 text-xs font-semibold text-white hover:scale-[1.02] transition-all">
-              <Plus className="h-4 w-4" /> Ingest New Reel
+              <Plus className="h-4 w-4" /> Import First Content
             </Link>
           )}
         </div>

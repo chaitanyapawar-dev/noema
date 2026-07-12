@@ -3,14 +3,49 @@ import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 import "./globals.css";
 import Grainient from "@/components/backgrounds/Grainient";
 import QueryProvider from "@/components/app/QueryProvider";
+import { BRAND } from "@/lib/branding";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-display", display: "swap", weight: ["400", "500", "600", "700"] });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "REEL SAVER AI — Multimodal Reel Memory Engine",
-  description: "AI-powered multimodal retrieval for Instagram reels. Speech, vision, OCR, and semantic search — fully local.",
+  title: {
+    default: `${BRAND.name} – ${BRAND.tagline}`,
+    template: `%s | ${BRAND.name}`,
+  },
+  description: BRAND.subtitle,
+  keywords: [
+    "AI knowledge base",
+    "second brain",
+    "multimodal AI",
+    "semantic search",
+    "Instagram Reels",
+    "local AI",
+    "ChromaDB",
+    "vector search",
+  ],
+  authors: [{ name: BRAND.name, url: BRAND.github }],
+  creator: BRAND.name,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://github.com/chaitanyapawar-dev/noema",
+    siteName: BRAND.name,
+    title: `${BRAND.name} – ${BRAND.tagline}`,
+    description: BRAND.subtitle,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND.name} – ${BRAND.tagline}`,
+    description: BRAND.subtitle,
+    creator: "@noema_ai",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

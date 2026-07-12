@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { BRAND } from "@/lib/branding";
 
 const NAV_LINKS = [
   { href: "/#features", label: "Features" },
@@ -11,7 +12,7 @@ const NAV_LINKS = [
   { href: "/#architecture", label: "Architecture" },
   { href: "/#intelligence", label: "Intelligence" },
   { href: "/#demo", label: "Demo" },
-  { href: "https://github.com/chaitanyapawar/REEL-SAVER-AI", label: "GitHub", external: true },
+  { href: BRAND.github, label: "GitHub", external: true },
 ];
 
 export default function FloatingNavbar() {
@@ -90,13 +91,13 @@ export default function FloatingNavbar() {
                 </span>
                 <span className="flex flex-col">
                   <span
-                    className="font-semibold tracking-widest text-white text-[13px]"
+                    className="font-bold tracking-[0.18em] text-white uppercase text-[13px]"
                     style={{ fontFamily: "var(--font-display, sans-serif)" }}
                   >
-                    REEL SAVER AI
+                    {BRAND.name}
                   </span>
-                  <span className="text-[10px] tracking-wide" style={{ color: "rgba(255,255,255,0.55)" }}>
-                    Multimodal Intelligence
+                  <span className="text-[9px] tracking-wide" style={{ color: "rgba(255,255,255,0.45)" }}>
+                    {BRAND.tagline}
                   </span>
                 </span>
               </Link>

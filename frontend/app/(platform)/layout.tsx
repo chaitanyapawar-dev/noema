@@ -123,7 +123,7 @@ function AIAssistantPanel({ onClose }: { onClose: () => void }) {
           <p className="text-[10px] uppercase tracking-widest text-white/30 mb-4">Memory Stats</p>
           <div className="space-y-3">
             {[
-              { label: "Reels Indexed", value: isOnline ? status.reelCount.toString() : "--" },
+              { label: "Items Indexed", value: isOnline ? status.reelCount.toString() : "--" },
               { label: "Vectors Stored", value: isOnline ? (status.reelCount * 12).toLocaleString() : "--" },
               { label: "Transcripts", value: isOnline ? status.reelCount.toString() : "--" },
               { label: "Avg Match Score", value: isOnline ? "91%" : "--" },
@@ -146,7 +146,7 @@ function AIAssistantPanel({ onClose }: { onClose: () => void }) {
             <Sparkles className="h-3.5 w-3.5 text-[#5B8CFF]" />
             <span className="text-[10px] uppercase tracking-widest text-[#5B8CFF]/80">Copilot</span>
           </div>
-          <p className="text-xs text-white/50 leading-relaxed">Chat with your entire reel memory. Ask questions, get citations.</p>
+          <p className="text-xs text-white/50 leading-relaxed">Chat with your entire knowledge base. Ask questions, get citations.</p>
         </div>
       </div>
     </motion.aside>
