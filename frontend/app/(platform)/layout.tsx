@@ -7,6 +7,8 @@ import PlatformTopbar from "@/components/app/PlatformTopbar";
 import CommandPalette from "@/components/app/CommandPalette";
 import { Bot, X, Search, Sparkles } from "lucide-react";
 import BackendProvider, { useBackend } from "@/components/app/BackendProvider";
+import { ContentProvider } from "@/components/contexts/ContentContext";
+import KnowledgeDrawer from "@/components/content/KnowledgeDrawer";
 
 const SUGGESTIONS = [
   "Find reels about AI startups",
@@ -158,32 +160,37 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
 
   return (
     <BackendProvider>
-      <div className="flex h-screen overflow-hidden">
-        {/* Global CMD+K Palette */}
-        <CommandPalette />
+      <ContentProvider>
+        <div className="flex h-screen overflow-hidden">
+          {/* Global CMD+K Palette */}
+          <CommandPalette />
 
-        {/* Fixed Sidebar */}
-        <GlassSidebar />
+          {/* Fixed Sidebar */}
+          <GlassSidebar />
 
-        {/* Main area (offset by sidebar 72px) */}
-        <div className="flex flex-1 flex-col pl-[72px] overflow-hidden">
-          {/* Topbar */}
-          <PlatformTopbar onTogglePanel={() => setPanelOpen((v) => !v)} />
+          {/* Main area (offset by sidebar 72px) */}
+          <div className="flex flex-1 flex-col pl-[72px] overflow-hidden">
+            {/* Topbar */}
+            <PlatformTopbar onTogglePanel={() => setPanelOpen((v) => !v)} />
 
-          {/* Content row */}
-          <div className="flex flex-1 overflow-hidden">
-            {/* Page content */}
-            <main className="flex-1 overflow-y-auto scrollbar-none">
-              {children}
-            </main>
+            {/* Content row */}
+            <div className="flex flex-1 overflow-hidden">
+              {/* Page content */}
+              <main className="flex-1 overflow-y-auto scrollbar-none">
+                {children}
+              </main>
 
-            {/* Collapsible AI Panel */}
-            <AnimatePresence>
-              {panelOpen && <AIAssistantPanel onClose={() => setPanelOpen(false)} />}
-            </AnimatePresence>
+              {/* Collapsible AI Panel */}
+              <AnimatePresence>
+                {panelOpen && <AIAssistantPanel onClose={() => setPanelOpen(false)} />}
+              </AnimatePresence>
+            </div>
           </div>
+
+          {/* Global Knowledge Drawer — mounted once, opened from any page */}
+          <KnowledgeDrawer />
         </div>
-      </div>
+      </ContentProvider>
     </BackendProvider>
   );
 }

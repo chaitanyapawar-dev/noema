@@ -3,15 +3,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Mic, ScanText, Eye, Layers, Sparkles, ArrowRight, Play, AlertCircle, Cpu } from "lucide-react";
-import Link from "next/link";
 import { searchReels, type SearchResult, type SearchResponse } from "@/lib/api";
+import { useContent } from "@/components/contexts/ContentContext";
+import { mapSearchResultToContent } from "@/lib/content/adapters";
 
 const EXAMPLES = [
-  "Find reels about startup marketing",
-  "Show clips mentioning OpenAI",
-  "Find motivational editing styles",
-  "Reels about machine learning",
-  "Clips with productivity advice",
+  "Startup marketing strategies",
+  "Content mentioning OpenAI",
+  "Motivational presentations",
+  "Machine learning architectures",
+  "Productivity hacks and habits",
 ];
 
 const TYPE_STYLES: Record<string, string> = {
@@ -43,7 +44,7 @@ const getResultTitle = (r: SearchResult) => {
     const clean = r.instagram_caption_preview.trim().split('\n')[0];
     return clean.length > 50 ? clean.substring(0, 50) + "..." : clean;
   }
-  return `Reel Match #${r.id.substring(0, 6)}`;
+  return `Content Match #${r.id.substring(0, 6)}`;
 };
 
 const getResultSource = (r: SearchResult) => {
@@ -71,6 +72,7 @@ const getMatchType = (r: SearchResult) => {
 };
 
 export default function SearchPage() {
+  const { openDrawer } = useContent();
   const [query, setQuery] = useState("");
   const [searchResponse, setSearchResponse] = useState<SearchResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -153,7 +155,7 @@ export default function SearchPage() {
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={e => e.key === "Enter" && doSearch()}
-            placeholder="Find reels about startup marketing..."
+            placeholder="Search your knowledge base..."
             className="flex-1 bg-transparent text-[15px] text-white placeholder:text-white/28 outline-none relative z-10"
             autoFocus
           />
@@ -278,7 +280,10 @@ export default function SearchPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.08 }}
                     className="glass-panel card-hover rounded-2xl p-5 relative overflow-hidden">
-                    <Link href={`/library/${r.id}`} className="absolute inset-0 z-0" />
+                    <div 
+                      onClick={() => openDrawer(mapSearchResultToContent(r))}
+                      className="absolute inset-0 z-0 cursor-pointer" 
+                    />
                     <div className="absolute top-0 left-[5%] right-[5%] h-px bg-gradient-to-r from-transparent via-white/12 to-transparent pointer-events-none" />
                     
                     <div className="flex items-start gap-3 relative z-10">
